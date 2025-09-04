@@ -43,7 +43,6 @@ for (let i = 0; i < callButtons.length; i++) {
                 </div>
             </div>  
         `;
-        // Insert new call at the top of the sidebar
         if (callHistory.firstChild) {
             callHistory.insertBefore(div, callHistory.firstChild);
         } else {

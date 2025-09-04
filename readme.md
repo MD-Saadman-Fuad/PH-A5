@@ -1,165 +1,48 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-005
 
-### 📅 Deadline For 60 marks: 29th August, 2025 (11:59 pm ⏱️)
+What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-### 📅 No Deadline For 50 marks
+getElementById returns a single element of the id given, so if you have multiple id of the same name, itwill only return 1, not all.
 
-### 📅 Deadline For 30 marks: Any time after 29th August.
+getElementByClassName returns a live HTMLCollection of all elements with the given class name. so you can iterate it using a for loop and access the elements one by one. or you can also access specific index if you know where your desired element is.
 
----
+querySelector gives the 1st element of the given CSS, so the 1st occurance of the CSS is caught by this.
 
-## ✅ Main Requirements (50 Marks)
+querySelectorAll returns a NodeList of all elements having the same CSS.  
 
-### 1. Navbar
+How do you create and insert a new element into the DOM?
+from my code
+get the id where you want to add it 
+const callHistory = document.getElementById('call-history');
 
-- **Website name & logo** on the left as Figma
-- **Heart icon, coin count (default-100), and Copy Count** on the right as Figma
+create the element that you want to add 
+const div = document.createElement('div');
+        div.innerHTML = `
+            <div class="history-card flex items-center justify-between p-4 bg-gray-100 rounded-lg mb-4">
+                <div>
+                    <h3 class="font-bold text-lg" id="service-name-called">${serviceNames[i].innerText}</h3>
+                    <p class="text-gray-500 service-name" id="service-number-called">${phoneNumber}</p>
 
----
+                </div>
+                <div class="items-top text-right">
+                    <p class="text-gray-500 call-time" id="call-time-called">${new Date().toLocaleTimeString()}</p>
+                </div>
+            </div>  
+        `;
 
-### 2. Hero Section
+add it to the parent div as a child
+callHistory.appendChild(div);
 
-- **Background Gradient** in the Whole Section
-- **A Relevant Logo** at the top-center
-- **Section Title** in the center
-- **A Relevant Slogan** in the bottom Center
+What is Event Bubbling and how does it work?
+Event bubbling is when an event starts at the deepest target element and goes up to its parents one then to his parent and so on. For example, clicking a button inside a div will trigger the button click event, then the div click event, then the body.
 
----
 
-### 2. Main Section
 
-This Section will have layout as figma
+What is Event Delegation in JavaScript? Why is it useful?
 
-<table border=1 width="100%" cellpadding="50">
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
- </tr>
- <tr>
-    <td colspan=9 >Card Section</td>
-    <td colspan=3>History Section</td>
- </tr>
-</table>
+Event delegation is attaching a single event listener to a parent element to handle events for its child elements. Its useful for handling events on dynamically added elements and improving performance by reducing the number of event listeners.
 
-### Emergency Hotline Section
+What is the difference between preventDefault() and stopPropagation() methods?
 
-- **Show Minimum 6 cards**. Each card will contain:
-  - Icon or Image
-  - Relevant Name
-  - Relevant Name in English
-  - Hotline number for calling
-  - Category Badge
-  - 💗 icon at left
-  - **2 buttons** at the bottom: Copy and Call with icons as Figma
+preventDefault() - Prevents the default browser action like submitting a form. normally when a form i submitted it gets erased but if we add preventDefault(), it will not happen as the default action is turned off.
 
-### History Section
-
-- **A white Background** in the whole section
-- **History Title with icon** at the top-left as Figma
-- **Clear History Button** at the top-right as Figma
-
----
-
-### 3. Responsiveness (5 Marks)
-
-- Website should be fully **responsive for mobile devices** (implementation up to you)
-
----
-
-## Functionalities
-
-### 4. Heart Icons
-
-- Clicking on the 💗 **heart icon** of any card will increase the count in the Navbar
-
----
-
-### 5. Call Buttons
-
-- On clicking a card's **Call Button**, following actions will happen:
-  - Show an **alert** with a message including the service name and number
-  - Each call will **cut 20 coins**. Reduce Coin after each click.
-  - If coins are less than 20, show a relevant alert and terminate the process.
-  - Add this service into the **Call History section** with:
-    - Service name
-    - Service number
-
----
-
-### 5. Call History Section
-
-- Show all called services with name & number. This will empty initially. when call button clicked it will filled dynamically.
-- A **Clear History button** on the right
-- Clicking this button will remove all data from call history
-
----
-
-## Create Readme
-
-You have to create a `Readme.md` file. and write down following questions. Dont Try to copy paste from AI Tools. Just write what you know about these. If you don't know , then search , learn , understand and then write.
-
-### 6. Answer the following questions clearly:
-
-1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
-2. How do you **create and insert a new element into the DOM**?
-3. What is **Event Bubbling** and how does it work?
-4. What is **Event Delegation** in JavaScript? Why is it useful?
-5. What is the difference between **preventDefault() and stopPropagation()** methods?
-
----
-
-## 🧪 Challenges Part (10 Marks)
-
-- On clicking the **Copy button**, show an alert and **increase the copy count** (3 Marks)
-
-- Hotline number will be **copied on click** so it can be pasted anywhere (4 Marks)
-
-💡Hint: You can ask for Help from `ChatGPT` Mamma . Just copy the below prompt , generate answer. use it with your own way.
-
-```bash
-I have a card with some text and a button inside it. I want that when a user clicks the button, some specific text from the card is copied to the clipboard using JavaScript. Please provide the code and explain it step by step.
-```
-
-- After clicking on the **Call button**, the **exact time of the call** will be shown in the Call History section (3 Marks)
-
-💡Hint: Search Google with that below question
-
-```bash
-How to get current local time in js
-```
-
----
-
-## ⚙️ Technology Stack
-
-- HTML
-- CSS ( Vanilla , Tailwind CSS , DaisyUI , Others - wheatever you like )
-- JavaScript ( Vanilla only. No Framework / Library Allowed )
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required
-- ❌ No Lorem Ipsum or dummy placeholder text. Use **relevant content only**
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository**
-- 🌐 **Live Link**
-
----
-
-# Let's Code and Achieve your Dream 🎯
+stopPropagation() - this stops the event bubbling from going up the tree
