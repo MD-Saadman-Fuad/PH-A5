@@ -1,11 +1,4 @@
-// // Clear Call History Functionality
-// const clearBtn = document.querySelector('.sidebar .btn.bg-[#00A63E]');
-// const callHistory = document.getElementById('call-history');
-// if (clearBtn && callHistory) {
-//     clearBtn.addEventListener('click', function() {
-//         callHistory.innerHTML = '';
-//     });
-// }
+
 
 console.log('connected')
 // cards heart button click will increase count by 1 Done
@@ -67,7 +60,7 @@ for (let i = 0; i < copyButtons.length; i++) {
     copyButtons[i].addEventListener('click', function() {
         const card = copyButtons[i].closest('.card');
         const hotlineNumberElem = card.querySelector('.call-number');
-        
+
         const hotlineNumber = hotlineNumberElem ? hotlineNumberElem.innerText : '';
 
 
@@ -80,3 +73,12 @@ for (let i = 0; i < copyButtons.length; i++) {
         });
     });
 }
+
+
+// Clear Call History Functionality
+const clearBtn = document.getElementById('clear-call-history');
+const callHistory = document.getElementById('call-history');
+
+clearBtn.addEventListener('click', function() {
+    callHistory.innerHTML = '';
+});
