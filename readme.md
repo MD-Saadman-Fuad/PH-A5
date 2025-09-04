@@ -11,26 +11,12 @@ querySelectorAll returns a NodeList of all elements having the same CSS.
 
 How do you create and insert a new element into the DOM?
 from my code
-get the id where you want to add it 
-const callHistory = document.getElementById('call-history');
+get the id where you want to add it using document.getElementById
 
 create the element that you want to add 
-const div = document.createElement('div');
-        div.innerHTML = `
-            <div class="history-card flex items-center justify-between p-4 bg-gray-100 rounded-lg mb-4">
-                <div>
-                    <h3 class="font-bold text-lg" id="service-name-called">${serviceNames[i].innerText}</h3>
-                    <p class="text-gray-500 service-name" id="service-number-called">${phoneNumber}</p>
-
-                </div>
-                <div class="items-top text-right">
-                    <p class="text-gray-500 call-time" id="call-time-called">${new Date().toLocaleTimeString()}</p>
-                </div>
-            </div>  
-        `;
-
+using createElement(`element tag`)
+elementtag.innerHTML = `Add necessary html`
 add it to the parent div as a child
-callHistory.appendChild(div);
 
 What is Event Bubbling and how does it work?
 Event bubbling is when an event starts at the deepest target element and goes up to its parents one then to his parent and so on. For example, clicking a button inside a div will trigger the button click event, then the div click event, then the body.
